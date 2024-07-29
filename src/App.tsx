@@ -40,8 +40,11 @@ export default function App() {
 }
 
 export const MyUILayout = () => {
-  const { useCallCallingState } = useCallStateHooks();
+  const { useCallCallingState, useParticipantCount } = useCallStateHooks();
   const callingState = useCallCallingState();
+  const participantCount = useParticipantCount();
+
+  console.log(participantCount);
 
   if (callingState !== CallingState.JOINED) {
     return <div>Loading...</div>;
